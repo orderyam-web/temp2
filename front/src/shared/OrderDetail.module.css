@@ -1,0 +1,97 @@
+.text1 {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: -25%;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: black;
+}
+.phonebox{
+    position: relative;
+    margin-top: 5%;
+    width: 90%;
+    margin-left: 10%;
+}
+.phonebox input[type="text"] {
+    width: 23%;
+    margin-left: 1%;
+    height: 100%;
+    line-height: normal;
+    padding: .8em .5em;
+    font-family: inherit;
+    border-radius: 8.5px;
+    border: solid 2px #f9d9dd;
+    text-align: center;
+}
+.text2 {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 7%;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: black;
+}
+.kakao {
+    margin-left: 13%;
+    margin-top: 5%;
+    border-width: 5px;
+    border-color: blue;
+}
+.card {
+    margin-left: 10%;
+    margin-top: 5%;
+    border-width: 5px;
+    border-color: blue;
+}
+.pay {
+    width: 80%;
+    height: 25%;
+    margin-left: 10%;
+    margin-top: 5%;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.32);
+    background-color: #ed5472;
+    text-align: center center;
+}
+.text3 {
+    margin-left: 28%;
+    margin-top: 6%;
+    font-family: NotoSansCJKkr;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.45;
+    letter-spacing: normal;
+    text-align: center;
+    text-align-last: center;
+    color: #ffffff;
+    vertical-align: middle;
+    position: absolute;
+}
+.backbox {
+    width: 350px;
+    height: 600px;
+    border-radius: 15px;
+    box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.16);
+    background-color: white;
+    color: rgba(0,0,100%,1);
+    position: fixed;
+    margin-left: 40%;
+    margin-right: 5%;
+    height: 300px;
+    top: 50%;
+    margin-top: -200px;
+    padding-top: 10%;
+    opacity: 1;
+}

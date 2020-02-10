@@ -1,0 +1,18 @@
+.Container{
+    padding-bottom: 8px;
+}
+.CheckBox{
+    width: 24px;
+    /* top: 50%; */
+    transform: translateY(25%);
+}
+.Title{
+    height: 100%;
+    line-height: 2;
+    left: 30px;
+}
+.Value{
+    color: #921e1e;
+    position: absolute;
+    right: 30px;
+}

@@ -1,0 +1,83 @@
+.logo{
+
+    margin-right:10%;
+    margin-top: 1%;
+    float: right;
+}
+.text1{
+    margin-left: 10%;
+    margin-top:3%;
+    font-family: NotoSansCJKkr;
+    font-size: 60px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.48;
+    letter-spacing: normal;
+    text-align: left;
+    color: #e53d51;
+  }
+
+.text2{
+    color: #202020;
+}
+
+.line{
+        margin-top:2%;
+        margin-left: 10%;
+        margin-right: 10%;
+        background-color: #ffffff;
+        border: none;
+        border-top: 3px dotted black;
+        color: #fff;
+        height: 1px;
+}
+.text3{
+    font-family: NotoSansCJKkr;
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.46;
+    letter-spacing: normal;
+    text-align: center;
+    color: #5c5c5c;
+    margin-top:1%;
+  }
+
+  .number{
+    font-family: NotoSansCJKkr;
+    font-size: 120px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.48;
+    letter-spacing: normal;
+    margin-top:-1%;
+    color: #5c5c5c;
+    text-align: center;
+  }
+  .info {
+    
+    font-family: NotoSansCJKkr;
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.46;
+    letter-spacing: normal;
+    text-align: center;
+    color: #414141;
+  
+  }
+  .Container{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    color: white;
+    background-color: #ed5472;
+    text-align: center;
+    line-height: 5;
+    
+}

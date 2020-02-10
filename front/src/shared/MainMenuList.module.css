@@ -1,0 +1,29 @@
+.Background{
+    padding-top: 16px;
+    padding-bottom: 1px;
+    background-color: #f6f6f6;
+}
+.Warning{
+    padding-left: 33px;
+    font-size: 11px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.18;
+    letter-spacing: normal;
+    text-align: left;
+    color: #707070;
+}
+.Button{
+    font-size: 11px;
+    text-align: center;
+    line-height: 2.2;
+    font-style: normal;
+    color: #707070;
+    width: 80px;
+    height: 25px;
+    margin-top: 9px;
+    margin-left: 33px;
+    margin-bottom: 73px;
+    background-color: white;
+}

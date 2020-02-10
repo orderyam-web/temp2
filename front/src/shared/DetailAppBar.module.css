@@ -1,0 +1,11 @@
+.AppBar{
+    position: fixed;
+    height: 70px;
+    width: 100%;
+    background-color: #f07987;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    line-height: 3.8;
+    z-index: 10;
+}

@@ -1,0 +1,39 @@
+.Container{
+    position: relative;
+    width: 145px;
+    height: 26.5px;
+    border-radius: 3px;
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    border: solid 1px #d3d3d3;
+}
+.Minus{
+    background-color: #f2f2f2;
+    height: 100%;
+    width: 41px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.72;
+}
+.Plus{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #f2f2f2;
+    height: 100%;
+    width: 41px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.9;
+}
+.Content{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.87;
+    z-index: -1;
+}

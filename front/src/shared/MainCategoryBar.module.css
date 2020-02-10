@@ -1,0 +1,58 @@
+.SliderElementContainer {
+    position: relative;
+    text-align: center;
+    height: 100%;
+    white-space: nowrap;
+  }
+  
+  .SliderElementPill{
+    margin-top: 9px;
+    margin-left: 9px;
+    margin-right: 9px;
+    width: 82px;
+    height: 33px;
+    border-color: white;
+    border-radius: 30px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #FFFFFF;
+    
+  }
+  
+  .SliderElementText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 14px;
+    transform: translate(-50%, calc(-50% - 1px));
+  }
+
+  .TabSelectionSlider {
+    z-index: 10;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    top: 0;
+    background:#ed5472;
+    text-align: left;
+  }
+  
+  .SliderLeftArrowImage{
+    height: 30px;
+    transform: translateY(calc(10px));
+  }
+  
+  .SliderRightArrowImage{
+    float: right;
+    height: 30px;
+    transform: translateY(calc(10px));
+  }
+
+  .TabSelectionSliderContainer{
+    display: flex;
+    float: right;
+    width: calc(100% - 60px);
+    height: 50px;
+    overflow: display=none;
+    overflow-y: hidden;
+  }
+  

@@ -1,0 +1,36 @@
+.Container{
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    background-color: white;
+}
+.Title{
+    position: relative;
+    margin-left: 18px;
+    padding-top: 23px;
+    font-size: 14px;
+    color: #707070;
+}
+.Description{
+    position: relative;
+    margin-left: 18px;
+    padding-top: 2px;
+    font-size: 11px;
+    color: #B4B4B4;
+}
+.Price{
+    position: relative;
+    margin-left: 18px;
+    padding-top: 2px;
+    padding-bottom: 27px;
+    font-size: 14px;
+    color: #707070;
+}
+.Image{
+    
+    position: relative;
+    float:right;
+    margin-right: 3%;
+   
+    
+}

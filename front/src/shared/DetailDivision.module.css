@@ -1,0 +1,19 @@
+.Container{
+    margin-top: 22.5px;
+    border-top: solid 1px #c4c4c4;
+    margin-left: 23.5px;
+    margin-right: 23.5px;
+    width: calc(100% - 47px);
+}
+.Title{
+    font-size: 18px;
+    margin-top: 18.5px;
+    margin-bottom: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.11;
+    letter-spacing: normal;
+    text-align: left;
+    color: #414141;
+}
