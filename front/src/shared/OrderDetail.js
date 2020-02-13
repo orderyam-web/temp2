@@ -11,9 +11,12 @@ import OrderBottomButton from './OrderBottomButton';
 import kakao from './kakao.png';
 import card from './card.png';
 import Paymentpage from './Paymentpage';
+import axios from 'axios';
+
 class OrderDetail extends Component{
     constructor(props){
         super(props);
+        
     }
     
     state = {
@@ -22,6 +25,7 @@ class OrderDetail extends Component{
         cellnum : 0,
         num :0,
         paymentStyle : '',
+        countValue : 0
     }
     savecellnum(){
         var cellnum = document.getElementById("cellnum").value;
@@ -40,7 +44,28 @@ class OrderDetail extends Component{
     }
 
     kakaoHandleClick = () => {
+
+        const user = {
+            price: 3000,
+            totalCount: 1
+        }
+        
+        axios.post("http://localhost:5000/kakaopay", {
+            user
+            // headers:{
+            //     'Content-Type': 'application/x-www-form-urlencoded',
+            // }
+
+        }).then((response) => {
+            setTimeout(() => {
+                this.renderHomePageMethod();
+            }, 1000);
+        })
+
         // do something meaningful, Promises, if/else, whatever, and then
+    }
+
+    kakaoredirect = () => {
         window.location.assign('http://localhost:5000/kakaopay');
     }
 
@@ -57,6 +82,7 @@ class OrderDetail extends Component{
     handlePaymentClick = () => {
         if (this.state.paymentStyle == 'kakao'){
             this.kakaoHandleClick()
+            this.kakaoredirect()
         }
         else if (this.state.paymentStyle == 'inicis'){
             this.inicisHandleClick()
@@ -99,8 +125,10 @@ class OrderDetail extends Component{
     }
 }
 
-const mapStateToProps = ({ menuList}) => ({  //2
+const mapStateToProps = ({ counter, menuList }) => ({  //2
     menulist: menuList.list,
+    price: counter.price,
+    totalCount: menuList.totalCount
 }) ;
 
 export default connect ( // 스토어와 연결
