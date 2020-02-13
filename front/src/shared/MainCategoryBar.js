@@ -14,14 +14,6 @@ export default class MainCategoryBar extends React.Component{
       super(props);
     }
     
-    state = {
-        categorycount:0,
-    }
-    handling = (id) => {
-        this.setState({
-            categorycount:id,
-        })
-    } ;
     render(){
         
         return(
@@ -34,26 +26,29 @@ export default class MainCategoryBar extends React.Component{
         }
 }
   
-let innerContent;
+
 
 class TabSelectionSliderContainer extends React.Component{
     constructor(props){
         super(props);
-        innerContent=[]
+
     }
+
+    state = {
+        categorycount:0,
+    }
+    handling = (id) => {
+        this.setState({
+            categorycount:id,
+        })
+        
+    } ;
+
     render(){
-        for(let i in this.props.category){
-            if(i===this.categorycount){
-               
-                this.showPill=true;
-            innerContent.push(<TabSelectionSliderElement   text={this.props.category[i]} showPill/>);
-        }
-        else{
-            this.showPill=false;
-            
-            innerContent.push(<TabSelectionSliderElement  text={this.props.category[i]} false/>);
-        }
-    }
+        let innerContent = this.props.category.map(item => <TabSelectionSliderElement text={item}  showPill={this.state.categorycount} handling={this.handling}/>)
+    //     for(let i in this.props.category){
+    //         innerContent.push(<TabSelectionSliderElement   text={this.props.category[i]} showPill={this.state.categorycount} index={i} handling={this.handling}/>);
+    // }
 
         return(
             <div className={styles.TabSelectionSliderContainer}>
@@ -69,25 +64,13 @@ class TabSelectionSliderElement extends React.Component{
         if(this.text === undefined){
             this.text = "섹션"
         }
-        this.showPill = props.showPill
     }
     render(){
-        
-        if(this.showPill === true){
-            return(
-                <div className={styles.SliderElementContainer}>
-                    <div className={styles.SliderElementPill}/>
-                    <div className={styles.SliderElementText}>{this.text}</div>
-                </div>
-            );
-        }
-        else{
-            return (
-                <div className={styles.SliderElementContainer}>
-                    <img className={styles.SliderElementPill} style={{opacity:0}}/>
-                    <div className={styles.SliderElementText}>{this.text}</div>
-                </div>
-            );
-        }
+        return(
+            <div className={styles.SliderElementContainer} onClick={() =>this.props.handling(this.text)}>
+                <img className={styles.SliderElementPill} style={this.props.showPill === this.text ? {} : {opacity:0}} />
+                <div className={styles.SliderElementText}>{this.text}</div>
+            </div>
+        )
     }
 }

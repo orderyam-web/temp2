@@ -14,9 +14,6 @@ export default class MainMenuList extends Component{
     constructor(props){
         super(props);
         this.state = {
-            // 카테고리명을 포함해서 리퀘주세요
-            //db서버에서 카테고리에 맞는 메뉴와 컴포넌트를 넘겨드리면 
-            //for문으로 추가해주세요
             menu_list : [new GlobalMainMenuItem(
                 {
                     id: 0,
@@ -26,7 +23,8 @@ export default class MainMenuList extends Component{
                     image: americano,
                     options: [{title:"사이즈 선택", option : new Map([['Regular', 0],['Large', 800]]) , type : 'bullet'}, 
                               {title:"옵션", option : new Map([['샷 추가', 800], ['시럽 추가', 500], ['휘핑 추가', 600]]), type:"check"}
-                    ]
+                    ],
+                    soldout : false,
                 }
             ),
             new GlobalMainMenuItem(
@@ -38,7 +36,8 @@ export default class MainMenuList extends Component{
                     image: caffelatte,
                     options: [{title:"사이즈 선택", option : new Map([['Regular', 0],['Large', 800]]) , type : 'bullet'}, 
                               {title:"옵션", option : new Map([['샷 추가', 800], ['시럽 추가', 500], ['휘핑 추가', 600]]), type:"check"}
-                    ]
+                    ],
+                    soldout : false,
                 }
             ),
             new GlobalMainMenuItem(
@@ -50,7 +49,8 @@ export default class MainMenuList extends Component{
                     image: caramel,
                     options: [{title:"사이즈 선택", option : new Map([['Regular', 0],['Large', 800]]) , type : 'bullet'},
                               {title:"옵션", option : new Map([['샷 추가', 800], ['시럽 추가', 500], ['휘핑 추가', 600]]), type:"check"}
-                    ]
+                    ],
+                    soldout : true,
                 }
             ),
             ]
@@ -61,13 +61,16 @@ export default class MainMenuList extends Component{
         for (const item in this.state.menu_list){
             const what = this.state.menu_list[item];
             innerContent.push(<MainMenuElement title={what.state.title} description={what.state.description} price={what.state.price}
-                image={what.state.image} options={what.state.options}/>);
+                image={what.state.image} options={what.state.options} soldout={what.state.soldout}/>);
         }
         return(
             <div className={styles.Background}>
                 {innerContent}
+                
                 <div className={styles.Warning}>º 메뉴이미지는 실제 서빙되는 음식과 다를 수 있음을 알려드립니다.<br/>º 오더얌 고객센터 : 1600-1234</div>
+                <Link to='/origin'>
                 <div className={styles.Button}>원산지 정보</div>
+                </Link>
             </div>
         );
     }

@@ -42,7 +42,7 @@ class MenuDetail extends Component{
     handleClick = () => {
         this.addOrder()
         setTimeout(()=>{this.setState({addedToOrder:false,opacity:1})}, 2000)
-        setTimeout(()=>{this.props.history.push('/');}, 1000)
+        setTimeout(()=>{this.props.history.push('/');}, 2000)
     }
     addOption = (option) => {
         if (option !== ''){

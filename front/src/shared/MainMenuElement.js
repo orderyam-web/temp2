@@ -23,7 +23,7 @@ export default class MainMenuElement extends Component{
                 price:this.props.price,
                 options:this.props.options
             }}} style={{ textDecoration: 'none' }}>
-                <div className={styles.Container}>
+                <div className={this.props.soldout ? styles.Container : styles.Container}>
                     <div className={styles.Title}>{this.props.title}
                     <img src={this.props.image} className={styles.Image} ></img></div>
                     <div className={styles.Description}>{this.props.description}</div>

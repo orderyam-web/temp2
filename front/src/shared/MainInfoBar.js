@@ -5,7 +5,7 @@ import * as serviceWorker from '../serviceWorker';
 import {Link} from 'react-router-dom';
 import styles from './MainInfoBar.module.css'
 import bag_image from './bag.png';
-import mark_image from './mark3.png';
+import mark_image from './mark2.png';
 
 export default class MainInfoBar extends React.Component{
     constructor(props){

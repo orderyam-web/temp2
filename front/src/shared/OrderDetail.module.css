@@ -1,7 +1,7 @@
-.text1 {
+.requirephonenum {
     width: 80%;
     margin-left: 10%;
-    margin-top: -25%;
+    margin-bottom:10%;
     font-size: 18px;
     font-weight: 500;
     font-stretch: normal;
@@ -13,7 +13,7 @@
 }
 .phonebox{
     position: relative;
-    margin-top: 5%;
+    margin-top: 8%;
     width: 90%;
     margin-left: 10%;
 }
@@ -28,10 +28,10 @@
     border: solid 2px #f9d9dd;
     text-align: center;
 }
-.text2 {
+.selectpaytool {
     width: 80%;
     margin-left: 10%;
-    margin-top: 7%;
+    margin-top: 5%;
     font-size: 18px;
     font-weight: 500;
     font-stretch: normal;
@@ -43,27 +43,29 @@
 }
 .kakao {
     margin-left: 13%;
-    margin-top: 5%;
-    border-width: 5px;
-    border-color: blue;
+    margin-top:3%;
+    border-width: 4px;
+    border-color:#f07987;
+    border-radius: 65px;
 }
 .card {
     margin-left: 10%;
-    margin-top: 5%;
-    border-width: 5px;
-    border-color: blue;
+    margin-top:3%;
+    border-width: 4px;
+    border-color:#f07987;
+    border-radius: 65px;
 }
-.pay {
+.paybox {
     width: 80%;
-    height: 25%;
+    height: 80px;
     margin-left: 10%;
-    margin-top: 5%;
+    margin-top:7%;
     border-radius: 10px;
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.32);
     background-color: #ed5472;
     text-align: center center;
 }
-.text3 {
+.finalpay {
     margin-left: 28%;
     margin-top: 6%;
     font-family: NotoSansCJKkr;
@@ -81,17 +83,18 @@
 }
 .backbox {
     width: 350px;
-    height: 600px;
+    height: 400px;
     border-radius: 15px;
     box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.16);
     background-color: white;
     color: rgba(0,0,100%,1);
     position: fixed;
-    margin-left: 40%;
-    margin-right: 5%;
-    height: 300px;
+    
+    margin-right: -170px;
+    
     top: 50%;
-    margin-top: -200px;
+    margin-top: -250px;
     padding-top: 10%;
     opacity: 1;
+    right:50%;
 }

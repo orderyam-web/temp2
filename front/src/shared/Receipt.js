@@ -32,9 +32,9 @@ class Receipt extends Component{
         return(
             <Fragment>
             <img className={checkstyle.logo} src={logo}></img>
-            <div className={checkstyle.text1}>주문이 완료<div className={checkstyle.text2}>되었습니다!</div></div>
+            <div className={checkstyle.ordercompleteattention}>주문이 완료<div className={checkstyle.text2}>되었습니다!</div></div>
             <hr className={checkstyle.line}></hr>
-            <div className={checkstyle.text3}>주문번호</div>
+            <div className={checkstyle.ordernum}>주문번호</div>
             <div className={checkstyle.number}>{ordernum}</div>
             <hr className={checkstyle.line}></hr>
             <div className={checkstyle.info}>카페드림 중앙대점</div>

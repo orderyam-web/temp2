@@ -82,13 +82,13 @@ class OrderDetail extends Component{
                 </div>
                 </div>
                 <div className={checkstyle.backbox} style={this.state.addedToOrder ? {display : 'block'} : {display : 'none'}}>
-                    <div className={checkstyle.text1}>알림톡 서비스를 위한 핸드폰 번호를 입력해주세요!</div>
+                    <div className={checkstyle.requirephonenum}>알림톡 서비스를 위한 핸드폰 번호를 입력해주세요!</div>
                     <div className={checkstyle.phonebox} id="cellnum">
                         
                         <input type="text"></input><input type="text"></input><input type="text"></input>
 
                     </div>
-                    <div className={checkstyle.text2}>결제수단 선택</div>
+                    <div className={checkstyle.selectpaytool}>결제수단 선택</div>
                     <img src={kakao}className={checkstyle.kakao} style={this.state.paymentStyle == 'kakao' ? {borderStyle : 'solid'} : {borderStyle : 'none'}} onClick={() => this.handlePaymentStyle('kakao')}></img>
                     <img src={card} className={checkstyle.card} style={this.state.paymentStyle == 'inicis' ? {borderStyle : 'solid'} : {borderStyle : 'none'}} onClick={() => this.handlePaymentStyle('inicis')}></img>
                     <Paymentpage onClick = {this.handlePaymentClick}></Paymentpage>

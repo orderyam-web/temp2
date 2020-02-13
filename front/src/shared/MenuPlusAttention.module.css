@@ -6,11 +6,11 @@
     background-color: white;
     position: fixed;
 
-    margin-left: 40%; /* half of width */
+    margin-right: -170px; /* half of width */
     height: 300px;
     top: 50%;
     margin-top: -150px; /* half of height */
- 
+    right: 50%;
    
   }
   .text{

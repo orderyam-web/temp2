@@ -12,7 +12,7 @@ import MainPage from "./MainPage";
 import MenuDetail from "./MenuDetail";
 import OrderDetail from  "./OrderDetail";
 import Receipt from "./Receipt";
-
+import Origin from "./Origin";
 
 export const getCookie = function (name) {
     const value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
@@ -40,6 +40,7 @@ export default function App() {
                 <Route path="/menu/:menu_id" component={MenuDetail}/>
                 <Route path="/order" component={OrderDetail}/>
                 <Route path="/receipt" component={Receipt}/>
+                <Route path="/origin" component={Origin}/>
 
                 <Route component={() => (<div>404 Not found </div>)}/>
             </Switch>

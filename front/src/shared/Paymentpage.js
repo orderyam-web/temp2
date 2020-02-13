@@ -12,8 +12,8 @@ export default class Paymentpage extends Component{
     }
     render(){
         return(
-            <div className={checkstyle.pay}>
-                <div className={checkstyle.text3} onClick={this.props.onClick}>결제하기</div>
+            <div className={checkstyle.paybox}>
+                <div className={checkstyle.finalpay} onClick={this.props.onClick}>결제하기</div>
                     
                
             </div>
