@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import './global.css';
-import * as serviceWorker from '../serviceWorker';
 
 import styles from './OrderCentralSelection.module.css';
-import DetailDivision from './DetailDivision'
-import OrderCell from './OrderCell';
 import { connect } from 'react-redux';
 import MenuListContainer from './container/MenuListContainer';
 
 class OrderCentralSelection extends Component{
     constructor(props){
         super(props);
-        
     }
+    
     render(){
         return(
             <div>
@@ -49,5 +45,6 @@ const mapStateToProps = ({ counter, menuList }) => ({  //2
     price: counter.price,
     totalCount: menuList.totalCount
 }) ;
+
 
 export default connect(mapStateToProps)(OrderCentralSelection);

@@ -11,48 +11,46 @@ const url = require('url');
 // app.use(bodyParser().json());
 // connection.connect();
 
+// storeId 를 body 숨겨서 보내고 받을 수 있으면 body?
+// router.get('/:storeId', function (req, res) {
+//     s_id = req.params.storeId;
+//     connection.query('SELECT * FROM categories WHERE storeId = ?', s_id, function (err, categories) {
+//         if (err) {
+//             throw err;
+//         }
+//         res.send(categories);
+//     });
+// });
 
-router.get('/', function (req, res) {
-    connection.query('SELECT * FROM cafemenu', function (err, menu) {
-        if (err) {
-            throw err;
-        }
-        res.send(menu);
-    });
-});
+router.post('/payment', function (req, res) {
 
-// //대공사
-// router.post('/payment', function (req, res) {
-//     //카카오 페이라면 name, price 를 post로 send
-//     //이니페이라면 ..?
-//     var orderInfo1 = req.body.dbInfo;
-//     var orderInfo2 = req.body.payInfo;
-//     //이 안의 정보를 db에 insert 혹은 res.send
-//     var items ={ //orderInfo 를 
-//         id = "store12345",
-//         price ="26000",
-//     };
+    //이 안의 정보를 db에 insert 혹은 res.send
+    // var payInfo ={ //orderInfo 를 
+    //     id = req.body.payInfo.id,
+    //     price =req.body.payInfo.price,
+    // };
+
+//     console.log(req.body.price);
 //    var insert_sql = "INSERT INTO order_list SET ?";
 //    var insert_list = {
-//         //db data here!   
+//         //db data here!
+
 //    }
-//    //받은 req.body 중 카카오 결제에 필요한 파라미터만 리다이렉트
-//    res.redirect(url.format({
-//        pathname : "/kakaopay",
-//        query: {
-//            "name" : req.body.name,
-//            "price": req.body.name
-//        }
-//    }));
+   //받은 req.body 중 카카오 결제에 필요한 파라미터만 리다이렉트
+   res.redirect(url.format({
+       pathname : "/kakaopay",
+       query: {
+           "name" : req.body.totalCount,
+           "price": req.body.price
+       }
+   }));
 //    connection.query(insert_sql, insert_list, function (err, order) {
 //        if (err) throw err;
 //        res.send("query_success");
 //        res.redirect('/kakaopay');
 //    });
    
-// });
-
-// API
+});
 /*
 app.get('/api/top3menu', function(req,res){
     connection.query('SELECT * FROM top_list', function(err, items){
@@ -88,4 +86,4 @@ app.get('/api/top3menu', function(req,res){
 //     });
 // });
 
-// module.exports = router;
+module.exports = router;

@@ -12,7 +12,7 @@ import MainMenuList from './MainMenuList';
 import top from './top3.png';
 import test_banner from './test_banner.png'
 
-export default class MainPage extends React.Component{ 
+export default class MainPage extends React.Component{
     constructor(props){
         super(props);
     }
