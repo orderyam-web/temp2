@@ -20,4 +20,3 @@ export default class Paymentpage extends Component{
         )
     }
 }
-

@@ -66,11 +66,8 @@ export default class MainMenuList extends Component{
         return(
             <div className={styles.Background}>
                 {innerContent}
-                
                 <div className={styles.Warning}>º 메뉴이미지는 실제 서빙되는 음식과 다를 수 있음을 알려드립니다.<br/>º 오더얌 고객센터 : 1600-1234</div>
-                <Link to='/origin'>
                 <div className={styles.Button}>원산지 정보</div>
-                </Link>
             </div>
         );
     }

@@ -47,6 +47,7 @@ export default class OrderCell extends Component{
                     </div>
                 </div>
             </div>
+
         )
     }
 }

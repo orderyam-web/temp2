@@ -2,13 +2,28 @@ var express = require('express');
 const request = require('request');
 const cors = require('cors');
 const router = express.Router();
+const bodyParser = require('body-parser');
+var app = express();
+app.use(bodyParser.json());
+app.use(express.static('build'));
+app.use(bodyParser.json({limit: '100mb'}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 router.use(cors());
 // app.use(bodyParser.urlencoded({ extended: false }));
 
 // router.get('/kakaopay', cors(), (req, res) => { res.send('cors!') });
 
-router.get('/kakaopay', function (req, res) {
+
+router.all('/kakaopay', function (req, res) {
+    console.log(typeof(req.body.user['price']));
+    console.log(req.body.user);
+
+    var price = req.body.user['price'];
+    var totalCount = req.body.user['totalCount'];
+    
+    var total_amount=0;
+
     var option = {
         method: "POST",
         uri: 'https://kapi.kakao.com/v1/payment/ready',
@@ -17,9 +32,9 @@ router.get('/kakaopay', function (req, res) {
             partner_order_id: "partner_order_id",
             partner_user_id: "partner_user_id",
             item_name: '초코파이',
-            quantity: 1,
-            total_amount: 2000,
-            vat_amount: 200,
+            quantity: totalCount,
+            total_amount: price,
+            vat_amount: total_amount%10,
             tax_free_amount: 0,
 
             approval_url: "http://localhost:5000/kakaopay/auth",
@@ -32,6 +47,8 @@ router.get('/kakaopay', function (req, res) {
         },
     };
 
+    
+
 
     request(option, function (err, response) {
         if (err) throw err;
@@ -41,6 +58,7 @@ router.get('/kakaopay', function (req, res) {
 
         tid = jsonObject.tid;
         var next_redirect_pc_url = jsonObject.next_redirect_pc_url;
+        //var next_redirect_mobile_url = jsonObject.next_redirect_mobile_url
 
         res.redirect(next_redirect_pc_url);
     });
