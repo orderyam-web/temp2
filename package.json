@@ -23,7 +23,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "request": "^2.88.0",
-    "yarn": "^1.21.1"
+    "yarn": "^1.22.0"
   },
   "devDependencies": {
     "concurrently": "^5.1.0"
