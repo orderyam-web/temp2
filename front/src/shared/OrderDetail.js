@@ -46,31 +46,38 @@ class OrderDetail extends Component{
     kakaoHandleClick = () => {
 
         const user = {
-            price: 12345,
-            totalCount: 21
+            price: 1500,
+            totalCount: 1
         }
-        
-        axios.get("http://localhost:5000/kakaopay", {
-            params: {
-                price: 12345
-            }
+
+        //const uri = {};
+
+        axios.post("http://localhost:5000/kakaopay", {
+            user
             // headers:{
             //     'Content-Type': 'application/x-www-form-urlencoded',
             // }
 
         })
+        .then(res => {
+            const uri = res;
+            this.setState({uri});
+            window.location.assign(uri.data);
+            console.log(uri);
+        })
         
-        // .then((response) => {
-        //     setTimeout(() => {
-        //         this.renderHomePageMethod();
-        //     }, 1000);
-        // })
+        
 
+        //console.log(this.uri);
+
+        
+        //.then(cache => this.kakaoredirect());
         // do something meaningful, Promises, if/else, whatever, and then
     }
 
     kakaoredirect = () => {
-        window.location.assign('http://localhost:5000/kakaopay');
+        //window.location.assign('http://localhost:5000/kakaopay');
+        //window.location.assign('https://mockup-pg-web.kakao.com/v1/fd6aee731fbdeb640478bb00f9d1f56a00e0d2afda3fb70702093b0d5f89ccb3/info');
     }
 
     inicisHandleClick = () => {
@@ -86,6 +93,7 @@ class OrderDetail extends Component{
     handlePaymentClick = () => {
         if (this.state.paymentStyle == 'kakao'){
             this.kakaoHandleClick()
+            this.kakaoredirect()
         }
         else if (this.state.paymentStyle == 'inicis'){
             this.inicisHandleClick()
