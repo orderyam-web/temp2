@@ -33,7 +33,7 @@ router.all('/kakaopay', function (req, res) {
             cid: "TC0ONETIME",
             partner_order_id: "partner_order_id",
             partner_user_id: "partner_user_id",
-            item_name: name,
+            item_name: name + ` 등 ${totalCount}개`,
             quantity: totalCount,
             total_amount: price,
             vat_amount: total_amount%10,
