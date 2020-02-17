@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-// import './global.css';
-import * as serviceWorker from '../serviceWorker';
 import {Link} from 'react-router-dom';
 import styles from './MainInfoBar.module.css'
 import bag_image from './bag.png';

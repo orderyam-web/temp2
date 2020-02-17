@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import './global.css';
-import * as serviceWorker from '../serviceWorker';
-import {Link, Route, Switch} from 'react-router-dom';
-
 import styles from './OrderCell.module.css';
-import GlobalCounter from './GlobalCounter.js'
-import { transform } from '@babel/core';
 import CounterContainer from './container/CounterContainer';
 
 export default class OrderCell extends Component{
@@ -47,7 +41,6 @@ export default class OrderCell extends Component{
                     </div>
                 </div>
             </div>
-
         )
     }
 }

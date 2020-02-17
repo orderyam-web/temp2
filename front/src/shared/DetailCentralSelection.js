@@ -39,7 +39,7 @@ export default class DetailCentralSelection extends Component{
                     </div>
                     <div style={{paddingLeft:'26px', paddingTop: '4px', fontSize: '11px', color: '#a1a1a1', width:'190px'}}>{this.props.description}</div>
                     <div style={{paddingTop:'9px',  height: '120px', width:'100%'}}>
-                        <img src={this.props.image} style={{float:'right', paddingRight:'21px',height: '120px', width:'120px'}}></img>
+                        <img src={this.props.image} className={styles.coffeimage}></img>
                     </div>
                     {this.innerContent}
                     <div style={{paddingTop:'18.5px', width: '100%'}}>

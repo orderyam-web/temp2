@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import './global.css';
-import * as serviceWorker from '../serviceWorker';
 import {Link, Route, Switch} from 'react-router-dom';
 
 import styles from './DetailBottomButton.module.css';

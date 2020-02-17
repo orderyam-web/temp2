@@ -7,7 +7,7 @@ import styles from './DetailDivision.module.css';
 import DetailDivisionCell from './DetailDivisionCell'
 
 let innerContent = [];
-export default class DetailCentralSelection extends Component{
+export default class DetailDivision extends Component{
     constructor(props){
         super(props);
     }

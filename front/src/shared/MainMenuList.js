@@ -17,6 +17,7 @@ export default class MainMenuList extends Component{
             menu_list : [new GlobalMainMenuItem(
                 {
                     id: 0,
+                    category: '커피(HOT)', 
                     title: "아메리카노",
                     description: "Lorem Ipsum fDolor",
                     price: 3000,
@@ -30,6 +31,7 @@ export default class MainMenuList extends Component{
             new GlobalMainMenuItem(
                 {
                     id: 1,
+                    category : '커피(HOT)', 
                     title: "카페라떼",
                     description: "서울우유를 사용해 더욱 부드럽고 맛있는 카페드림만의 시그니처 카페라떼입니다.",
                     price: 2700,
@@ -43,6 +45,7 @@ export default class MainMenuList extends Component{
             new GlobalMainMenuItem(
                 {
                     id: 2,
+                    category: '커피(ICE)',
                     title: "카라멜 마끼아또",
                     description: "카라멜의 달콤한 맛과 우유의 고소함이 만난 카페드림만의 특별한 카라멜 마끼아또입니다.",
                     price: 3000,
@@ -57,17 +60,17 @@ export default class MainMenuList extends Component{
         };
     }
     render(){
-        let innerContent = []
-        for (const item in this.state.menu_list){
-            const what = this.state.menu_list[item];
-            innerContent.push(<MainMenuElement title={what.state.title} description={what.state.description} price={what.state.price}
-                image={what.state.image} options={what.state.options} soldout={what.state.soldout}/>);
-        }
         return(
             <div className={styles.Background}>
-                {innerContent}
+                {this.state.menu_list.map(item => {if (item.state.category === this.props.selectedCategory)
+                    return <MainMenuElement title={item.state.title} description={item.state.description} price={item.state.price} image={item.state.image} options={item.state.options} soldout={item.state.soldout}/>
+                else if (this.props.selectedCategory === '')
+                    return <MainMenuElement title={item.state.title} description={item.state.description} price={item.state.price} image={item.state.image} options={item.state.options} soldout={item.state.soldout}/>})}
+                
                 <div className={styles.Warning}>º 메뉴이미지는 실제 서빙되는 음식과 다를 수 있음을 알려드립니다.<br/>º 오더얌 고객센터 : 1600-1234</div>
+                <Link to='/origin'>
                 <div className={styles.Button}>원산지 정보</div>
+                </Link>
             </div>
         );
     }

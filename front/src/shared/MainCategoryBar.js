@@ -20,7 +20,7 @@ export default class MainCategoryBar extends React.Component{
             <div className={styles.TabSelectionSlider}>
                 <img className={styles.SliderLeftArrowImage} alt="left" src={arrow_left} />
                 <img className={styles.SliderRightArrowImage} alt="right" src={arrow_right} />
-                <TabSelectionSliderContainer  category={this.props.category}></TabSelectionSliderContainer>
+                <TabSelectionSliderContainer  category={this.props.category} selectedCategory={this.props.selectedCategory} categoryHandling={this.props.categoryHandling}></TabSelectionSliderContainer>
             </div>
         );
         }
@@ -34,18 +34,9 @@ class TabSelectionSliderContainer extends React.Component{
 
     }
 
-    state = {
-        categorycount:0,
-    }
-    handling = (id) => {
-        this.setState({
-            categorycount:id,
-        })
-        
-    } ;
 
     render(){
-        let innerContent = this.props.category.map(item => <TabSelectionSliderElement text={item}  showPill={this.state.categorycount} handling={this.handling}/>)
+        let innerContent = this.props.category.map(item => <TabSelectionSliderElement text={item}  showPill={this.props.selectedCategory} categoryHandling={this.props.categoryHandling}/>)
     //     for(let i in this.props.category){
     //         innerContent.push(<TabSelectionSliderElement   text={this.props.category[i]} showPill={this.state.categorycount} index={i} handling={this.handling}/>);
     // }
@@ -65,9 +56,12 @@ class TabSelectionSliderElement extends React.Component{
             this.text = "섹션"
         }
     }
+    handling = (value) => {
+        this.props.categoryHandling(value);
+    }
     render(){
         return(
-            <div className={styles.SliderElementContainer} onClick={() =>this.props.handling(this.text)}>
+            <div className={styles.SliderElementContainer} onClick={() => this.handling(this.text)}>
                 <img className={styles.SliderElementPill} style={this.props.showPill === this.text ? {} : {opacity:0}} />
                 <div className={styles.SliderElementText}>{this.text}</div>
             </div>

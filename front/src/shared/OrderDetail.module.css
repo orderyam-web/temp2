@@ -3,13 +3,7 @@
     margin-left: 10%;
     margin-bottom:10%;
     font-size: 18px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    text-align: left;
-    color: black;
+    
 }
 .phonebox{
     position: relative;
@@ -20,8 +14,6 @@
 .phonebox input[type="text"] {
     width: 23%;
     margin-left: 1%;
-    height: 100%;
-    line-height: normal;
     padding: .8em .5em;
     font-family: inherit;
     border-radius: 8.5px;
@@ -33,13 +25,6 @@
     margin-left: 10%;
     margin-top: 5%;
     font-size: 18px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    text-align: left;
-    color: black;
 }
 .kakao {
     margin-left: 13%;
@@ -63,22 +48,14 @@
     border-radius: 10px;
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.32);
     background-color: #ed5472;
-    text-align: center center;
 }
 .finalpay {
     margin-left: 28%;
     margin-top: 6%;
     font-family: NotoSansCJKkr;
     font-size: 20px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.45;
-    letter-spacing: normal;
-    text-align: center;
-    text-align-last: center;
     color: #ffffff;
-    vertical-align: middle;
     position: absolute;
 }
 .backbox {
@@ -87,11 +64,8 @@
     border-radius: 15px;
     box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.16);
     background-color: white;
-    color: rgba(0,0,100%,1);
     position: fixed;
-    
     margin-right: -170px;
-    
     top: 50%;
     margin-top: -250px;
     padding-top: 10%;

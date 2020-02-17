@@ -4,6 +4,13 @@
     margin-bottom: 16px;
     background-color: white;
 }
+.Containersoldout{
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    background-color: #8f8f8f
+    
+}
 .Title{
     position: relative;
     margin-left: 18px;
@@ -33,4 +40,21 @@
     margin-right: 3%;
    
     
+}
+.soldout{
+    border-style: solid;
+    width:70px;
+    height:40px;
+    margin-top:10px;
+    float:right;
+    position: absolute;
+    right:7%;
+    border-color:#d20c23;
+    color: #d20c23;
+    transition: 0.5s all ease;
+    -ms-transform: rotate(330deg); 
+    -webkit-transform: rotate(330deg); 
+    transform: rotate(330deg);
+    text-align: center;
+    font-size: 30px;
 }

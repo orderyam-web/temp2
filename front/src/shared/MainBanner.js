@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 
 import './global.css';
-import * as serviceWorker from '../serviceWorker';
-
 import { Carousel } from 'react-responsive-carousel';
-import test_banner from './test_banner.png'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 

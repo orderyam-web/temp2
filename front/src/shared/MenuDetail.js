@@ -1,15 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import ReactTimeout from 'react-timeout'
-import ReactDOM from 'react-dom';
 import './global.css';
-import * as serviceWorker from '../serviceWorker';
 
 import DetailAppBar from './DetailAppBar';
 import DetailCentralSelection from './DetailCentralSelection';
 import GlobalSelectionMenuItem from './GlobalSelectionMenuItem'
 import DetailBottomButton from './DetailBottomButton';
 import checkstyle from './MenuPlusAttention.module.css';
-import enableCheck from './circle.png';
 import { connect } from 'react-redux';
 import { addMenu } from './store/modules/menuList';
 import { count_increment } from './store/modules/counter';
@@ -27,7 +23,8 @@ class MenuDetail extends Component{
             name: this.props.location.state.menu_id,
             price: this.props.location.state.price,
             options: [],
-            count: 1
+            count: 1,
+            image: this.props.location.state.image
         }
     }
 
@@ -81,7 +78,7 @@ class MenuDetail extends Component{
     }
 
     render(){
-        const { description, options, menu_id } = this.props.location.state ;
+        const { description, options, menu_id,image } = this.props.location.state ;
         let list = options.map(option => new GlobalSelectionMenuItem({title:option.title, type:option.type, selection:option.option}))
         return(
             <Fragment>
@@ -89,7 +86,7 @@ class MenuDetail extends Component{
                     <DetailAppBar title="메뉴 선택"></DetailAppBar>
                     <div style={{marginTop:'86px', marginBottom:'179px', opacity:this.state.opacity}}>
                         {/* array of GlobalSelectionMenuItem from above */}
-                        <DetailCentralSelection title={menu_id} data={list} description={description} price={this.state.menu.price} count={this.state.menu.count} addOption={this.addOption} delOption={this.delOption} addMenuPrice={this.addMenuPrice} addMenuCount={this.addMenuCount}></DetailCentralSelection>
+                        <DetailCentralSelection image={image} title={menu_id} data={list} description={description} price={this.state.menu.price} count={this.state.menu.count} addOption={this.addOption} delOption={this.delOption} addMenuPrice={this.addMenuPrice} addMenuCount={this.addMenuCount}></DetailCentralSelection>
                         <DetailBottomButton addOrder={this.handleClick} ordernow={this.addOrder}></DetailBottomButton>
                     </div>
                 </div>

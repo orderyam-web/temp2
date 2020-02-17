@@ -25,6 +25,11 @@ class Receipt extends Component{
             var timecut="오전";
             var dhour=d.getHours()
         }
+        var min=d.getMinutes();
+        if(min<10){
+            min="0"+min
+        }
+        
         let ordername = this.props.menulist.concat({name:'null'})[0];
         var ordernumber = orderNumber.getInstance();
         var ordernum = ordernumber.getID();
@@ -39,7 +44,7 @@ class Receipt extends Component{
             <hr className={checkstyle.line}></hr>
             <div className={checkstyle.info}>카페드림 중앙대점</div>
             <div className={checkstyle.info}>{ordername.name} 외 {Number(this.props.menucount) - 1}개</div>
-            <div className={checkstyle.info}>{d.getFullYear()}-{(d.getMonth())+1}-{d.getDate()} {timecut} {dhour}:{d.getMinutes()}</div>
+            <div className={checkstyle.info}>{d.getFullYear()}-{(d.getMonth())+1}-{d.getDate()} {timecut} {dhour}:{min}</div>
             <Link to= './'>
             <div className={checkstyle.Container}>메인페이지로 이동</div>
             </Link>

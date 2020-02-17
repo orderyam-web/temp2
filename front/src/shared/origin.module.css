@@ -1,0 +1,60 @@
+.backbox{
+
+    background-color:#f6f6f6;
+    position: absolute; 
+    width:100%;
+    height:100%; 
+    margin-top: 70px;  
+}
+.companynamebox{
+    background-color: white;
+    width:80%;
+    margin-left: 10%;
+    margin-top:60px;
+    text-indent:15px;
+    font-family: NotoSansCJKkr;
+    font-size: 20px;
+    line-height: 3;
+    color: #2c2c2c;
+    left:50%;
+    
+}
+.companynumber{
+    background-color: white;
+    width:80%;
+    margin-left: 10%;
+    margin-top:20px;
+    height:60px;
+    font-family: NotoSansCJKkr;
+    font-size: 20px;
+    line-height: 3;
+    text-indent:15px;
+    color: #2c2c2c;
+    left:50%;
+}
+
+.wherefrom{
+    background-color: white;
+    width:80%;
+    margin-left: 10%;
+    margin-top:20px;
+    height:180px;
+    font-family: NotoSansCJKkr;
+    font-size: 20px;
+    line-height: 3;
+    text-indent:15px;
+    left:50%;
+}
+.representname{
+    background-color: white;
+    width:80%;
+    margin-left: 10%;
+    margin-top:20px;
+    height:60px;
+    font-family: NotoSansCJKkr;
+    font-size: 20px;
+    line-height: 3;
+    text-indent:15px; 
+    color: #2c2c2c;
+    left:50%;
+}
