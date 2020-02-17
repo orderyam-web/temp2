@@ -21,7 +21,8 @@ router.all('/kakaopay', function (req, res) {
     //console.log(req.body.user);
     console.log(val.user['price']);
     var price = val.user['price'];
-    var totalCount = val.user['totalCount'];
+    var totalCount = val.user['count'];
+    var name = val.user['name'];
     
     var total_amount=0;
 
@@ -32,9 +33,9 @@ router.all('/kakaopay', function (req, res) {
             cid: "TC0ONETIME",
             partner_order_id: "partner_order_id",
             partner_user_id: "partner_user_id",
-            item_name: '초코파이',
+            item_name: name,
             quantity: totalCount,
-            total_amount: val.user['price'],
+            total_amount: price,
             vat_amount: total_amount%10,
             tax_free_amount: 0,
 

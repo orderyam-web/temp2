@@ -46,8 +46,9 @@ class OrderDetail extends Component{
     kakaoHandleClick = () => {
 
         const user = {
-            price: 1500,
-            totalCount: 1
+            price: Number(this.props.price),
+            count: Number(this.props.totalCount),
+            name: this.props.menulist.concat({name:'null'})[0].name
         }
 
         //const uri = {};
