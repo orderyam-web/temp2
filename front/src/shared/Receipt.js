@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
-// import './global.css';
+import './global.css';
 import * as serviceWorker from '../serviceWorker';
 import {Link} from "react-router-dom";
 import checkstyle from './receipt.module.css';
