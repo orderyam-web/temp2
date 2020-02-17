@@ -4,34 +4,26 @@ const cors = require('cors');
 const router = express.Router();
 const bodyParser = require('body-parser');
 var app = express();
-router.use(bodyParser.json());
-router.use(express.static('build'));
-//app.use(bodyParser.json({limit: '100mb'}));
-router.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.static('build'));
+app.use(bodyParser.json({limit: '100mb'}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 router.use(cors());
+// app.use(bodyParser.urlencoded({ extended: false }));
+
+// router.get('/kakaopay', cors(), (req, res) => { res.send('cors!') });
 
 
-
-// router.get('/data', function(req, res){
-//     console.log(req.query);
-//     // var price = req.params.user['price'];
-//     // var count = req.params.user['totalCount'];
-
-//     // console.log(price);
-//     // console.log(count);
-
-//     res.redirect(`http://localhost:5000/kakaopay?price=${price}`)
-// });
-
-
-
-router.get('/kakaopay', function (req, res) {
-    // var price = req.body.user['price'];
-    // var totalCount = req.body.user['totalCount'];
-
-    console.log(req.query);
-    total_amount = 0;
+router.all('/kakaopay', function (req, res) {
+    var val = req.body;
+    //console.log(typeof(req.body.user['price']));
+    //console.log(req.body.user);
+    console.log(val.user['price']);
+    var price = val.user['price'];
+    var totalCount = val.user['totalCount'];
+    
+    var total_amount=0;
 
     var option = {
         method: "POST",
@@ -41,9 +33,9 @@ router.get('/kakaopay', function (req, res) {
             partner_order_id: "partner_order_id",
             partner_user_id: "partner_user_id",
             item_name: '초코파이',
-            quantity: 1,
-            total_amount: req.query.price,
-            vat_amount: 0,
+            quantity: totalCount,
+            total_amount: val.user['price'],
+            vat_amount: total_amount%10,
             tax_free_amount: 0,
 
             approval_url: "http://localhost:5000/kakaopay/auth",
@@ -56,23 +48,26 @@ router.get('/kakaopay', function (req, res) {
         },
     };
 
+    
+    console.log(option);
+
     request(option, function (err, response) {
         if (err) throw err;
 
         var jsonObject = JSON.parse(response.body); // string 타입 JSON 타입으로 변환
-        
-        // console.log(jsonObject);
+        console.log(jsonObject); // 
+
         tid = jsonObject.tid;
         var next_redirect_pc_url = jsonObject.next_redirect_pc_url;
         //var next_redirect_mobile_url = jsonObject.next_redirect_mobile_url
-        console.log(next_redirect_pc_url);
-        if(next_redirect_pc_url != ' '){
-            res.redirect(next_redirect_pc_url);
-        }
+        //console.log(next_redirect_pc_url);
+        //var jsonDatas = JSON.stringify(val);
+        res.json(next_redirect_pc_url);
+        
     });
+    //console.log(next_redirect_pc_url);
 });
 
-https://mockup-pg-web.kakao.com/v1/8ffbf455d36d0828358455a0fce7e69c745027e6de729a79bb8d074c5b57693c/info
 router.get('/kakaopay/auth', function (req, res) {
     var option = {
         method: "POST",
