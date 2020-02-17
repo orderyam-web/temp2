@@ -54,10 +54,6 @@ class OrderDetail extends Component{
 
         axios.post("http://localhost:5000/kakaopay", {
             user
-            // headers:{
-            //     'Content-Type': 'application/x-www-form-urlencoded',
-            // }
-
         })
         .then(res => {
             const uri = res;
@@ -66,20 +62,14 @@ class OrderDetail extends Component{
             console.log(uri);
         })
         
-        
-
-        //console.log(this.uri);
-
-        
-        //.then(cache => this.kakaoredirect());
         // do something meaningful, Promises, if/else, whatever, and then
     }
-
+/*
     kakaoredirect = () => {
         //window.location.assign('http://localhost:5000/kakaopay');
         //window.location.assign('https://mockup-pg-web.kakao.com/v1/fd6aee731fbdeb640478bb00f9d1f56a00e0d2afda3fb70702093b0d5f89ccb3/info');
     }
-
+*/
     inicisHandleClick = () => {
         // do something meaningful, Promises, if/else, whatever, and then
         window.location.assign('http://localhost:8080/local_inicis/INIStdPayRequest.jsp');
@@ -93,7 +83,7 @@ class OrderDetail extends Component{
     handlePaymentClick = () => {
         if (this.state.paymentStyle == 'kakao'){
             this.kakaoHandleClick()
-            this.kakaoredirect()
+            //this.kakaoredirect()
         }
         else if (this.state.paymentStyle == 'inicis'){
             this.inicisHandleClick()
