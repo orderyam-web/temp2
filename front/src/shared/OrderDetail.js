@@ -46,21 +46,25 @@ class OrderDetail extends Component{
     kakaoHandleClick = () => {
 
         const user = {
-            price: 3000,
-            totalCount: 1
+            price: 12345,
+            totalCount: 21
         }
         
-        axios.post("http://localhost:5000/kakaopay", {
-            user
+        axios.get("http://localhost:5000/kakaopay", {
+            params: {
+                price: 12345
+            }
             // headers:{
             //     'Content-Type': 'application/x-www-form-urlencoded',
             // }
 
-        }).then((response) => {
-            setTimeout(() => {
-                this.renderHomePageMethod();
-            }, 1000);
         })
+        
+        // .then((response) => {
+        //     setTimeout(() => {
+        //         this.renderHomePageMethod();
+        //     }, 1000);
+        // })
 
         // do something meaningful, Promises, if/else, whatever, and then
     }
@@ -82,7 +86,6 @@ class OrderDetail extends Component{
     handlePaymentClick = () => {
         if (this.state.paymentStyle == 'kakao'){
             this.kakaoHandleClick()
-            this.kakaoredirect()
         }
         else if (this.state.paymentStyle == 'inicis'){
             this.inicisHandleClick()
