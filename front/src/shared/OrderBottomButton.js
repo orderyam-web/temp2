@@ -18,5 +18,5 @@ export default class OrderBottomButton extends Component{
                 <div className={styles.RightButton} onClick={this.props.addOrder}>결제하기</div>
             </div>
         )
-    }
+    } //더 주문하기 클릭시 메인화면으로 돌아가는 Onclick
 }

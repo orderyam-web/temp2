@@ -94,9 +94,12 @@ class MenuDetail extends Component{
                     
                       <div className={checkstyle.circle}></div>
                     
-                    <div className={checkstyle.text}>주문표에 추가되었습니다!</div>
+                    <div className={checkstyle.text}>주문표에 추가되었습니다!</div> 
                 </div>
-            </Fragment>
+            </Fragment> //주문표에 추가되었습니다! 를 알려주는 Menuplusattention.css와 연결되는 부분이 여기입니다.
+            // Opacity 설정을 통해 주문표에 추가 Button을 Onclick 했을때 Opacity가 변하며 뒷 화면이 투명해지고, 
+            //팝업창에 시선이 집중될 수 있도록 구현하였습니다.
+
         )
     }
 }

@@ -25,7 +25,7 @@ class Receipt extends Component{
             var timecut="오전";
             var dhour=d.getHours()
         }
-        var min=d.getMinutes();
+        var min=d.getMinutes(); //분 받아오는 min 변수입니다. 10분이하일때 0을 앞에 붙여서 출력하도록 했습니다.
         if(min<10){
             min="0"+min
         }
