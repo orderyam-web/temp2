@@ -19,7 +19,7 @@ class Receipt extends Component{
         var d=new Date();
         if(d.getHours()>12){
             var timecut="오후";
-            var dhour=d.getHours()-12;
+            var dhour=d.getHours()-12; //영수증 화면에 보여지는 시간 타이머는 그냥 현재 시간을 사용했습니다. 오후 오전 판별을 추가해서요
         }
         else{
             var timecut="오전";

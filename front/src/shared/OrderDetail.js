@@ -116,7 +116,7 @@ class OrderDetail extends Component{
                         <input type="text"></input><input type="text"></input><input type="text"></input>
 
                     </div>
-                    <div className={checkstyle.selectpaytool}>결제수단 선택</div>
+                    <div className={checkstyle.selectpaytool}>결제수단 선택</div> 
                     <img src={kakao}className={checkstyle.kakao} style={this.state.paymentStyle == 'kakao' ? {borderStyle : 'solid'} : {borderStyle : 'none'}} onClick={() => this.handlePaymentStyle('kakao')}></img>
                     <img src={card} className={checkstyle.card} style={this.state.paymentStyle == 'inicis' ? {borderStyle : 'solid'} : {borderStyle : 'none'}} onClick={() => this.handlePaymentStyle('inicis')}></img>
                     <Paymentpage onClick = {this.handlePaymentClick}></Paymentpage>

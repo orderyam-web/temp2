@@ -33,3 +33,4 @@ Forking/sharing is prohibited.
       - OrderCell
     - OrderBottomButton
   - Receipt
+  - Origin

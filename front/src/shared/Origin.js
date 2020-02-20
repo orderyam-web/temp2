@@ -21,15 +21,15 @@ class Origin extends Component{
             <DetailAppBar title="원산지 및 사업자 정보"></DetailAppBar>
             <div className={checkstyle.backbox}>
             <div className={checkstyle.companynamebox}>
-                상호명  {companyname}</div>
+                상호명    {companyname}</div>
             <div className={checkstyle.companynumber}>
-                사업자번호  {companynum}
+                사업자번호    {companynum}
             </div>
             <div className={checkstyle.wherefrom}>
-                원산지정보  {wherefromfood}
+                원산지정보    {wherefromfood}
             </div>
             <div className={checkstyle.representname}>
-                대표자명  {representname}
+                대표자명    {representname}
             </div>
                 
                 </div>
