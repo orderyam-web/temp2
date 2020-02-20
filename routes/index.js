@@ -2,88 +2,74 @@
 var express = require('express');
 var router = express.Router();
 
-// var mysql = require('mysql');
-// var dbconfig = require('../db/database');
-// var connection = mysql.createConnection(dbconfig);
+var mysql = require('mysql');
+var dbconfig = require('../db/database');
+var connection = mysql.createConnection(dbconfig);
 var bodyParser = require('body-parser');
 const app = express();
 const url = require('url');
-// app.use(bodyParser().json());
-// connection.connect();
+app.use(bodyParser.json());
+connection.connect();
 
-// storeId 를 body 숨겨서 보내고 받을 수 있으면 body?
-// router.get('/:storeId', function (req, res) {
-//     s_id = req.params.storeId;
-//     connection.query('SELECT * FROM categories WHERE storeId = ?', s_id, function (err, categories) {
-//         if (err) {
-//             throw err;
-//         }
-//         res.send(categories);
-//     });
-// });
-
-router.post('/payment', function (req, res) {
-
-    //이 안의 정보를 db에 insert 혹은 res.send
-    // var payInfo ={ //orderInfo 를 
-    //     id = req.body.payInfo.id,
-    //     price =req.body.payInfo.price,
-    // };
-
-//     console.log(req.body.price);
-//    var insert_sql = "INSERT INTO order_list SET ?";
-//    var insert_list = {
-//         //db data here!
-
-//    }
-   //받은 req.body 중 카카오 결제에 필요한 파라미터만 리다이렉트
-   res.redirect(url.format({
-       pathname : "/kakaopay",
-       query: {
-           "name" : req.body.totalCount,
-           "price": req.body.price
-       }
-   }));
-//    connection.query(insert_sql, insert_list, function (err, order) {
-//        if (err) throw err;
-//        res.send("query_success");
-//        res.redirect('/kakaopay');
-//    });
-   
-});
-/*
-app.get('/api/top3menu', function(req,res){
-    connection.query('SELECT * FROM top_list', function(err, items){
-        if(err) {
-          throw err;
+router.post('/', function (req, res) {
+    id = req.body.store_Id;
+    connection.query('SELECT catId FROM categories WHERE storeId = ?', id, function (err, categories) {
+        if (err) {
+            throw err;
         }
-        if(order.affectedRows > 0){
-          res.send(items);
-      }
+        res.json(categories);
     });
 });
-*/
+router.post('/best', function (req, res) {
+    id = req.body.store_Id;
+    connection.query('SELECT * FROM top_seller WHERE storeId = ?', id, function (err, topseller) {
+        if (err) {
+            throw err;
+        }
+        res.json(topseller);
+    });
+});
 
-// router.get('/api/:cat', function (req, res) {
-//     const cat = req.params.cat;
-//     // var sql = 'SELECT * FROM cafemenu WHERE _cat = ?';
-//     connection.query(sql, cat, function (err, items) {
-//         if (err) {
-//             throw err;
-//         }
-//         res.send(items);
-//         console.log(item.length + "items found");
-//     });
-// });
+router.post('/:stid/:cat', function (req, res) {
+    const cat = req.body.category_name;
+    var stid = req.body.store_Id;
+    var sql = 'SELECT * FROM cafemenu WHERE _storeId = ? AND _cat = ?';
+    connection.query(sql, [stid ,cat], function (err, items) {
+        if (err) {
+            throw err;
+        }
+        res.json(items);
+    });
+});
 
-// router.get('/api/:cat/:id', function (req, res) {
-//     var cat = req.params.cat;
-//     var id = req.params.id;
-//     var sql = 'SELECT * FROM options_able where _cat = ? AND _id = ?';
-//     connection.query(sql, [cat, id], function (err, options) {
-//         if (err) throw err;
-//         res.send(options);
-//     });
-// });
+router.post('/menuDetail', function (req, res) {
+    var stid = req.body.store_id;
+    var cat = req.body.category_name;
+    var menuid = req.body.menu_name;
+    var sql = 'SELECT * FROM option WHERE _store = ? AND _cat = ? AND _name = ?' ;
+    connection.query(sql, stid, cat, menuid, function (err, options) {
+        if (err) throw err;
+        res.send(options);
+    });
+    res.json(menuid);
+});
+
+router.post('/payment', function (req, res){
+    var payInfo = {
+        storeId : req.body.storeid,
+        totalPrice: req.body.price,
+        orderNum: req.body.num
+    };
+    var insertsql = "INSERT INTO order_list SET ?";   
+    connection.query(insertsql, payInfo, function (err, order) {
+        if (err) throw err;
+        res.send("query_success");
+        res.redirect('/kakaopay');
+    }); 
+});
+
+router.post('/success', function (req, res){
+    //주문한 물건 목록 디비에 따로 저장하려고 하였으나 생략
+});
 
 module.exports = router;
