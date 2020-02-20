@@ -30,7 +30,7 @@ class Receipt extends Component{
             min="0"+min
         }
         
-        let ordername = this.props.menulist.concat({name:'null'})[0];
+        let ordername = this.props.menulist.concat({name:'null'})[0]; 
         var ordernumber = orderNumber.getInstance();
         var ordernum = ordernumber.getID();
 

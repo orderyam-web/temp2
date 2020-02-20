@@ -22,7 +22,8 @@ export default class MainPage extends React.Component{
         time : '10:00 - 22:00',
         phone : '050123456780',
         selectedCategory:'',
-    }
+    }//기본적인 가게 정보를 담은 state입니다.
+    
     categoryHandling = (id) => {
         this.setState({
             selectedCategory:id,
@@ -30,7 +31,7 @@ export default class MainPage extends React.Component{
         
     } ;
     render(){
-        let category_list = ['인기메뉴','커피(HOT)', '커피(ICE)'];
+        let category_list = ['인기메뉴','커피(HOT)', '커피(ICE)']; // 여기가 category 목록 모은 list입니다! category 추가할때 여기 추가하시면 됩니다!
         return(
             <div>
                 <MainInfoBar name = {this.state.name} time = {this.state.time} phone = {this.state.phone}></MainInfoBar>
@@ -42,7 +43,7 @@ export default class MainPage extends React.Component{
 
                 {/* Scroll to Top */}
                 <img src={top} onClick={() => {window.scrollTo(0, 0)}} style={{position:'fixed', height:'58px', right:'18px', bottom:'18px', boxShadow: '0 3px 6px 0 rgba(0, 0, 0, 0.16);'}}/>
-            </div>
+            </div> //Top.png를 클릭하였을때 화면 스크롤이 위로 올라가게 하는 기능입니다.
         );
     }
 }

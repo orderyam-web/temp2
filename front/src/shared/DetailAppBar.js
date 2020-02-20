@@ -11,6 +11,8 @@ export default class DetailAppBar extends Component{
     constructor(props){
         super(props);
     }
+
+
     render(){
         return(
             <div className={styles.AppBar}>

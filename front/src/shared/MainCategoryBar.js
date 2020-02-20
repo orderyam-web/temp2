@@ -22,7 +22,7 @@ export default class MainCategoryBar extends React.Component{
                 <img className={styles.SliderRightArrowImage} alt="right" src={arrow_right} />
                 <TabSelectionSliderContainer  category={this.props.category} selectedCategory={this.props.selectedCategory} categoryHandling={this.props.categoryHandling}></TabSelectionSliderContainer>
             </div>
-        );
+        );  //왼쪽, 오른쪽 화살표 구현입니다. 또한 category의 모바일 터치가 가능한 스크롤이 구현되어 있습니다.
         }
 }
   

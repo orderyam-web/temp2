@@ -55,7 +55,7 @@ export default class MainMenuList extends Component{
                     ],
                     soldout : true,
                 }
-            ),
+            ),// 메뉴 리스트가 여기에 구현되어 있습니다. Option 포함
             ]
         };
     }
@@ -64,14 +64,14 @@ export default class MainMenuList extends Component{
             <div className={styles.Background}>
                 {this.state.menu_list.map(item => {if (item.state.category === this.props.selectedCategory)
                     return <MainMenuElement title={item.state.title} description={item.state.description} price={item.state.price} image={item.state.image} options={item.state.options} soldout={item.state.soldout}/>
-                else if (this.props.selectedCategory === '')
+                else if (this.props.selectedCategory === '') //해당하는 카테고리가 선택되었을때 그 메뉴를 화면에 보여주는 기능입니다.
                     return <MainMenuElement title={item.state.title} description={item.state.description} price={item.state.price} image={item.state.image} options={item.state.options} soldout={item.state.soldout}/>})}
                 
                 <div className={styles.Warning}>º 메뉴이미지는 실제 서빙되는 음식과 다를 수 있음을 알려드립니다.<br/>º 오더얌 고객센터 : 1600-1234</div>
                 <Link to='/origin'>
                 <div className={styles.Button}>원산지 정보</div>
-                </Link>
-            </div>
+                </Link> 
+            </div> //origin은 원산지 정보를 표시한 웹입니다. Link로 구현되어 있습니다.
         );
     }
 }

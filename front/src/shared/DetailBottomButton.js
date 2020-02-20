@@ -10,6 +10,8 @@ export default class DetailBottomButton extends Component{
     constructor(props){
         super(props);
     }
+
+    // /order링크가 주문화면 링크입니다! 
     render(){
         return(
             <div className={styles.Container}>

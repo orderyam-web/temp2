@@ -10,9 +10,7 @@ export default class MainMenuElement extends Component{
     }
     
     render(){
-        var ImageArray =['americano.png','test.png','caramel.png'
         
-];
         return(
             <Link to={this.props.soldout ? 1 : {pathname:'/menu/'.concat(this.props.title),
             state:{
@@ -31,8 +29,10 @@ export default class MainMenuElement extends Component{
                     <div  className={styles.soldout} style={this.props.soldout ? {display : 'block'} : {display : 'none'}}>매진 </div></div>
                     <div className={styles.Description}>{this.props.description}</div>
                     <div className={styles.Price}>{this.props.price}</div>
-                </div>
+                </div> 
             </Link>
+            //soldout은 매진여부를 판단하는 변수입니다. soldout이 true여서 매진일경우 Link가 작동하지 않도록, 매진이 아닐경우 Link가 가능하게 했습니다.
+            // state의 변수들은 Menulist에 있는 각 음식들의 데이터를 받아온 값입니다.
         
         );
         

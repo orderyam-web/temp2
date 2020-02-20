@@ -25,7 +25,7 @@ class Origin extends Component{
             <div className={checkstyle.companynumber}>
                 사업자번호    {companynum}
             </div>
-            <div className={checkstyle.wherefrom}>
+            <div className={checkstyle.wherefrom}> 
                 원산지정보    {wherefromfood}
             </div>
             <div className={checkstyle.representname}>

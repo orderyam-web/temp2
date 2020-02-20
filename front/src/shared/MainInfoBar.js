@@ -9,6 +9,7 @@ export default class MainInfoBar extends React.Component{
         super(props);
     }
     render(){
+
         return(
             
             <div className={styles.InfoBar}>
@@ -21,6 +22,6 @@ export default class MainInfoBar extends React.Component{
                 <br/>
         
             </div>
-        );
-    }
+        ); // 장바구니 아이콘을 클릭하면 /order 화면으로 넘어가는 link가 구현되어 있습니다.
+    } 
 }

@@ -114,7 +114,7 @@ class OrderDetail extends Component{
                     <div className={checkstyle.phonebox} id="cellnum">
                         
                         <input type="text"></input><input type="text"></input><input type="text"></input>
-
+                        
                     </div>
                     <div className={checkstyle.selectpaytool}>결제수단 선택</div> 
                     <img src={kakao}className={checkstyle.kakao} style={this.state.paymentStyle == 'kakao' ? {borderStyle : 'solid'} : {borderStyle : 'none'}} onClick={() => this.handlePaymentStyle('kakao')}></img>
@@ -122,7 +122,7 @@ class OrderDetail extends Component{
                     <Paymentpage onClick = {this.handlePaymentClick}></Paymentpage>
                     </div>
             
-            </Fragment>
+            </Fragment> // onClick 했을때 결제화면이 나오는 구조입니다. 
         )
     }
 }
